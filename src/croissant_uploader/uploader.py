@@ -22,7 +22,9 @@ def upload_results(results: TestResults, hostname: str, branch: str):
         "passed": list(results.passed),
         "failed": list(results.failed),
     }
-    logger.info(f"⬆️ Uploading test results to {hostname}...")
+    logger.info(
+        f"⬆️ Uploading test results from branch {branch} to {hostname}..."
+    )
     httpx_logger = logging.getLogger("httpx")
     httpx_logger.setLevel(logging.WARNING)
 
