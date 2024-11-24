@@ -1,12 +1,17 @@
-from junitparser import JUnitXml
 import logging
+
+from junitparser import JUnitXml
+
 from .results import TestResults
 
 logger = logging.getLogger(__name__)
 
+
 def extract_tests(*paths: list[str]):
     if not paths:
-        raise RuntimeError(f"Please provide at least one path to a JUnit XML file")
+        raise RuntimeError(
+            "Please provide at least one path to a JUnit XML file"
+        )
     results = TestResults()
     xmls = [JUnitXml.fromfile(path) for path in paths]
     xml = sum(xmls, JUnitXml())
@@ -26,4 +31,7 @@ def extract_tests(*paths: list[str]):
                 results.passed.add(test_name)
             else:
                 results.failed.add(test_name)
+    logger.info(
+        f"🔎 Found {len(results.passed)} passed tests and {len(results.failed)} failed tests"
+    )
     return results

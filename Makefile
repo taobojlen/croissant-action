@@ -5,4 +5,4 @@ format-check:
 	uv run ruff format --check && ruff check
 
 format:
-	uv run ruff format && ruff check --fix
+	uv run ruff format && uv run ruff check --fix
