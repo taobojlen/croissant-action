@@ -1,4 +1,5 @@
 import logging
+import sys
 from urllib.parse import urljoin
 
 import httpx
@@ -30,5 +31,6 @@ def upload_results(results: TestResults, hostname: str, branch: str):
         response.raise_for_status().json()
     except httpx.HTTPError as exc:
         logger.error(f"⚠️ Failed to upload results: {exc}")
+        sys.exit(1)
         return
     logger.info("🥐 Done!")
