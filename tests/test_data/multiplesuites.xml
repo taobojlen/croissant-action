@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.009" timestamp="2024-11-24T16:58:48.342183+00:00" hostname="Honest-Mistake.local">
+        <testcase classname="tests.test_foo" name="test_foo" time="0.000" />
+    </testsuite>
+    <testsuite name="pytest-2" errors="0" failures="0" skipped="0" tests="1" time="0.009" timestamp="2024-11-24T16:58:48.342183+00:00" hostname="Honest-Mistake.local">
+        <testcase classname="tests.test_bar" name="test_bar" time="0.000" />
+    </testsuite>
+</testsuites>

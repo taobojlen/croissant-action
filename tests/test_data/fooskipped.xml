@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0" failures="0" skipped="1" tests="1" time="0.012" timestamp="2024-11-24T17:23:10.470290+00:00" hostname="Honest-Mistake.local">
+        <testcase classname="tests.test_extractor" name="test_foo" time="0.000">
+            <skipped type="pytest.skip" message="skipping to test something">/Users/tao/dev/croissant-uploader/tests/test_extractor.py:4: skipping to test something</skipped>
+        </testcase>
+    </testsuite>
+</testsuites>

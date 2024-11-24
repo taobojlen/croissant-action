@@ -1,0 +1,35 @@
+[project]
+name = "croissant-uploader"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["httpx>=0.27.2", "junitparser>=3.2.0"]
+
+[dependency-groups]
+dev = [
+    "pytest-httpx>=0.34.0",
+    "pytest>=8.3.3",
+    "ruff>=0.8.0",
+    "pytest-random-order>=1.1.1",
+]
+
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+extend-select = [
+    "I",   # isort
+    "N",   # naming
+    "B",   # bugbear
+    "FIX", # disallow FIXME/TODO comments
+    "F",   # pyflakes
+    "T20", # flake8-print
+    "ERA", # commented-out code
+    "UP",  # pyupgrade
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]

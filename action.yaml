@@ -1,0 +1,34 @@
+name: Upload to Croissant
+description: Uploads test results to Croissant.
+inputs:
+  hostname:
+    description: The hostname of your Croissant instance, e.g. croissant.example.workers.dev
+    required: true
+  files:
+    description: Comma-separated list of paths. Each file must be in JUnit XML format.
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+    - name: Install UV
+      uses: astral-sh/setup-uv@v4
+      with:
+        enable-cache: true
+        version: "0.5.2"
+        cache-suffix: "croissant"
+    - name: Upload test results
+      if: ${{ !cancelled() }}
+      shell: bash
+      env:
+        PYTHONPATH: src
+      run: |
+        uv run python -m croissant_uploader --hostname ${{ inputs.hostname}} --branch ${{ github.head_ref || github.ref_name }} ${{ inputs.files }}
+
+branding:
+  icon: "upload-cloud"
+  color: "yellow"
