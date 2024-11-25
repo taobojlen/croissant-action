@@ -61,3 +61,13 @@ def handles_duplicate_tests_last_one_wins():
     )
     assert results.passed == set()
     assert results.failed == set()
+
+
+def test_handles_globs():
+    results = extract_tests("tests/test_data/folder/*.xml")
+    assert results.passed == {"tests.test_foo.test_a"}
+    assert results.failed == {"tests.test_bar.test_b"}
+
+    results = extract_tests("tests/test_data/folder/**/*.xml")
+    assert results.passed == {"tests.test_foo.test_a", "tests.test_baz.test_c"}
+    assert results.failed == {"tests.test_bar.test_b"}

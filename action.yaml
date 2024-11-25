@@ -5,7 +5,7 @@ inputs:
     description: The hostname of your Croissant instance, e.g. croissant.example.workers.dev
     required: true
   files:
-    description: Comma-separated list of paths. Each file must be in JUnit XML format.
+    description: Comma-separated list of paths. Each file must be in JUnit XML format. Can include globs, e.g. "test-results/*.xml"
     required: true
 
 runs:

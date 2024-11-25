@@ -1,3 +1,4 @@
+import glob
 import logging
 
 from junitparser import JUnitXml
@@ -7,13 +8,17 @@ from .results import TestResults
 logger = logging.getLogger(__name__)
 
 
-def extract_tests(*paths: list[str]):
+def extract_tests(*paths: str):
     if not paths:
         raise RuntimeError(
             "Please provide at least one path to a JUnit XML file"
         )
     results = TestResults()
-    xmls = [JUnitXml.fromfile(path) for path in paths]
+    expanded_paths = []
+    for path in paths:
+        expanded_paths.extend(glob.glob(path, recursive=True))
+    logger.debug(f"Found files: {expanded_paths}")
+    xmls = [JUnitXml.fromfile(path) for path in expanded_paths]
     xml = sum(xmls, JUnitXml())
     for suite in xml:
         for test in suite:

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.016" timestamp="2024-11-24T17:21:12.061433+00:00" hostname="Honest-Mistake.local">
+    <testcase classname="tests.test_bar" name="test_b" time="0.000">
+      <failure message="assert 1 == 2">Traceback (most recent call last):
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/runner.py", line 341, in from_call
+    result: TResult | None = func()
+                             ~~~~^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/runner.py", line 242, in &lt;lambda&gt;
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 139, in _multicall
+    raise exception.with_traceback(exception.__traceback__)
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 122, in _multicall
+    teardown.throw(exception)  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/threadexception.py", line 92, in pytest_runtest_call
+    yield from thread_exception_runtest_hook()
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/threadexception.py", line 68, in thread_exception_runtest_hook
+    yield
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 122, in _multicall
+    teardown.throw(exception)  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/unraisableexception.py", line 95, in pytest_runtest_call
+    yield from unraisable_exception_runtest_hook()
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/unraisableexception.py", line 70, in unraisable_exception_runtest_hook
+    yield
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 122, in _multicall
+    teardown.throw(exception)  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/logging.py", line 846, in pytest_runtest_call
+    yield from self._runtest_for(item, "call")
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/logging.py", line 829, in _runtest_for
+    yield
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 122, in _multicall
+    teardown.throw(exception)  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/capture.py", line 880, in pytest_runtest_call
+    return (yield)
+            ^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 122, in _multicall
+    teardown.throw(exception)  # type: ignore[union-attr]
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/skipping.py", line 257, in pytest_runtest_call
+    return (yield)
+            ^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+    ~~~~~~~~~~~~^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/python.py", line 1627, in runtest self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 139, in _multicall
+    raise exception.with_traceback(exception.__traceback__)
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/pluggy/_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "/Users/tao/dev/croissant-uploader/.venv/lib/python3.13/site-packages/_pytest/python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "/Users/tao/dev/croissant-uploader/tests/test_extractor.py", line 4, in test_foo
+    assert 1 == 2
+AssertionError: assert 1 == 2</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
